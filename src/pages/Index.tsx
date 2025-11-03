@@ -40,7 +40,10 @@ const Index = () => {
       };
     };
 
-    const initialApps = Array.from({ length: 8 }, generateRandomApplication);
+    const initialApps = Array.from({ length: 3 }, () => {
+      const app = generateRandomApplication();
+      return { ...app, status: 'approved' as const };
+    });
     setApplications(initialApps);
 
     const approved = initialApps.filter(app => app.status === 'approved');
@@ -52,15 +55,14 @@ const Index = () => {
 
     const interval = setInterval(() => {
       const newApp = generateRandomApplication();
-      setApplications(prev => [newApp, ...prev.slice(0, 15)]);
+      const approvedApp = { ...newApp, status: 'approved' as const };
+      setApplications(prev => [approvedApp, ...prev.slice(0, 2)]);
       
-      if (newApp.status === 'approved') {
-        setStats(prev => ({
-          approvedToday: prev.approvedToday + 1,
-          totalAmount: prev.totalAmount + newApp.amount,
-          successRate: Math.round(((prev.approvedToday + 1) / (prev.approvedToday + 1 + (15 - prev.approvedToday))) * 100)
-        }));
-      }
+      setStats(prev => ({
+        approvedToday: prev.approvedToday + 1,
+        totalAmount: prev.totalAmount + approvedApp.amount,
+        successRate: Math.round(((prev.approvedToday + 1) / (prev.approvedToday + 1)) * 100)
+      }));
     }, 5000);
 
     return () => clearInterval(interval);
