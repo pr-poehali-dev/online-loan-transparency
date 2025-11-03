@@ -111,13 +111,16 @@ const Index = () => {
           {applications.map((app, index) => (
             <Card
               key={app.id}
-              className={`p-3 md:p-5 transition-all duration-500 animate-slide-up ${
+              className={`relative overflow-hidden p-3 md:p-5 transition-all duration-500 animate-slide-up ${
                 app.status === 'approved'
                   ? 'bg-gradient-to-r from-primary/10 to-white border-primary/50 hover:shadow-md hover:border-primary'
                   : 'bg-gradient-to-r from-destructive/10 to-white border-destructive/30 hover:shadow-md hover:border-destructive/50'
               }`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
+              <div className={`absolute left-0 top-0 bottom-0 w-1 ${
+                app.status === 'approved' ? 'bg-primary' : 'bg-destructive'
+              }`}></div>
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-3 min-w-0 flex-1">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-muted flex-shrink-0">
