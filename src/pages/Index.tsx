@@ -78,7 +78,7 @@ const Index = () => {
           <p className="text-muted-foreground text-sm md:text-lg">Прозрачная система выдачи займов в режиме реального времени</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-6 md:mb-10 max-w-2xl mx-auto">
           <Card className="p-4 md:p-6 bg-gradient-to-br from-primary/20 to-white border-primary/30 animate-fade-in hover:shadow-lg transition-all">
             <div className="flex items-center justify-between mb-2">
               <Icon name="CheckCircle2" size={28} className="text-primary" />
@@ -88,16 +88,7 @@ const Index = () => {
             <div className="text-xs md:text-sm text-muted-foreground">Одобренных заявок</div>
           </Card>
 
-          <Card className="p-4 md:p-6 bg-gradient-to-br from-secondary/20 to-white border-secondary/30 animate-fade-in hover:shadow-lg transition-all" style={{ animationDelay: '0.1s' }}>
-            <div className="flex items-center justify-between mb-2">
-              <Icon name="Wallet" size={28} className="text-secondary" />
-              <Badge className="bg-secondary text-secondary-foreground text-xs">Выдано</Badge>
-            </div>
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-1">{stats.totalAmount.toLocaleString('ru-RU')} ₽</div>
-            <div className="text-xs md:text-sm text-muted-foreground">Общая сумма</div>
-          </Card>
-
-          <Card className="p-4 md:p-6 bg-gradient-to-br from-primary/15 to-white border-primary/30 animate-fade-in hover:shadow-lg transition-all" style={{ animationDelay: '0.2s' }}>
+          <Card className="p-4 md:p-6 bg-gradient-to-br from-primary/15 to-white border-primary/30 animate-fade-in hover:shadow-lg transition-all" style={{ animationDelay: '0.1s' }}>
             <div className="flex items-center justify-between mb-2">
               <Icon name="TrendingUp" size={28} className="text-primary" />
               <Badge className="bg-primary text-primary-foreground text-xs">Рейтинг</Badge>
