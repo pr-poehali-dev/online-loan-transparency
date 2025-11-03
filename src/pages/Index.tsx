@@ -67,88 +67,88 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
-        <div className="mb-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+    <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
+      <div className="container mx-auto px-3 md:px-4 py-4 md:py-8 max-w-7xl">
+        <div className="mb-6 md:mb-8 text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Займы Онлайн
           </h1>
-          <p className="text-muted-foreground text-lg">Прозрачная система выдачи займов в режиме реального времени</p>
+          <p className="text-muted-foreground text-sm md:text-lg">Прозрачная система выдачи займов в режиме реального времени</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <Card className="p-6 bg-gradient-to-br from-primary/20 to-primary/5 border-primary/30 animate-fade-in hover:scale-105 transition-transform">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-10">
+          <Card className="p-4 md:p-6 bg-gradient-to-br from-primary/20 to-white border-primary/30 animate-fade-in hover:shadow-lg transition-all">
             <div className="flex items-center justify-between mb-2">
-              <Icon name="CheckCircle2" size={32} className="text-primary" />
-              <Badge className="bg-primary text-primary-foreground">Сегодня</Badge>
+              <Icon name="CheckCircle2" size={28} className="text-primary" />
+              <Badge className="bg-primary text-primary-foreground text-xs">Сегодня</Badge>
             </div>
-            <div className="text-4xl font-bold text-primary mb-1">{stats.approvedToday}</div>
-            <div className="text-sm text-muted-foreground">Одобренных заявок</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stats.approvedToday}</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Одобренных заявок</div>
           </Card>
 
-          <Card className="p-6 bg-gradient-to-br from-secondary/20 to-secondary/5 border-secondary/30 animate-fade-in hover:scale-105 transition-transform" style={{ animationDelay: '0.1s' }}>
+          <Card className="p-4 md:p-6 bg-gradient-to-br from-secondary/20 to-white border-secondary/30 animate-fade-in hover:shadow-lg transition-all" style={{ animationDelay: '0.1s' }}>
             <div className="flex items-center justify-between mb-2">
-              <Icon name="Wallet" size={32} className="text-secondary" />
-              <Badge className="bg-secondary text-secondary-foreground">Выдано</Badge>
+              <Icon name="Wallet" size={28} className="text-secondary" />
+              <Badge className="bg-secondary text-secondary-foreground text-xs">Выдано</Badge>
             </div>
-            <div className="text-4xl font-bold text-secondary mb-1">{stats.totalAmount.toLocaleString('ru-RU')} ₽</div>
-            <div className="text-sm text-muted-foreground">Общая сумма</div>
+            <div className="text-3xl md:text-4xl font-bold text-secondary mb-1">{stats.totalAmount.toLocaleString('ru-RU')} ₽</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Общая сумма</div>
           </Card>
 
-          <Card className="p-6 bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30 animate-fade-in hover:scale-105 transition-transform" style={{ animationDelay: '0.2s' }}>
+          <Card className="p-4 md:p-6 bg-gradient-to-br from-primary/15 to-white border-primary/30 animate-fade-in hover:shadow-lg transition-all" style={{ animationDelay: '0.2s' }}>
             <div className="flex items-center justify-between mb-2">
-              <Icon name="TrendingUp" size={32} className="text-accent" />
-              <Badge className="bg-accent text-accent-foreground">Рейтинг</Badge>
+              <Icon name="TrendingUp" size={28} className="text-primary" />
+              <Badge className="bg-primary text-primary-foreground text-xs">Рейтинг</Badge>
             </div>
-            <div className="text-4xl font-bold text-accent mb-1">{stats.successRate}%</div>
-            <div className="text-sm text-muted-foreground">Процент одобрения</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stats.successRate}%</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Процент одобрения</div>
           </Card>
         </div>
 
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-4 md:mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-primary rounded-full animate-pulse-glow"></div>
-            <h2 className="text-2xl font-bold">Трансляция заявок</h2>
+            <h2 className="text-xl md:text-2xl font-bold">Трансляция заявок</h2>
           </div>
           <Badge variant="outline" className="text-xs">Обновляется каждые 5 сек</Badge>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
           {applications.map((app, index) => (
             <Card
               key={app.id}
-              className={`p-5 transition-all duration-500 animate-slide-up ${
+              className={`p-3 md:p-5 transition-all duration-500 animate-slide-up ${
                 app.status === 'approved'
-                  ? 'bg-gradient-to-r from-primary/10 to-transparent border-primary/50 hover:border-primary'
-                  : 'bg-gradient-to-r from-destructive/10 to-transparent border-destructive/30 hover:border-destructive/50'
+                  ? 'bg-gradient-to-r from-primary/10 to-white border-primary/50 hover:shadow-md hover:border-primary'
+                  : 'bg-gradient-to-r from-destructive/10 to-white border-destructive/30 hover:shadow-md hover:border-destructive/50'
               }`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-muted">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-muted flex-shrink-0">
                     <img src={app.avatar} alt={app.name} className="w-full h-full object-cover" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{app.name}</h3>
-                    <p className="text-sm text-muted-foreground">
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-sm md:text-lg truncate">{app.name}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">
                       {app.timestamp.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <div className="text-2xl font-bold mb-2">
+                <div className="text-right flex-shrink-0">
+                  <div className="text-lg md:text-2xl font-bold mb-1 md:mb-2">
                     {app.amount.toLocaleString('ru-RU')} ₽
                   </div>
                   {app.status === 'approved' ? (
-                    <Badge className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                      <Icon name="CheckCircle" size={14} className="mr-1" />
+                    <Badge className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs">
+                      <Icon name="CheckCircle" size={12} className="mr-1" />
                       Одобрен
                     </Badge>
                   ) : (
-                    <Badge variant="destructive">
-                      <Icon name="XCircle" size={14} className="mr-1" />
+                    <Badge variant="destructive" className="text-xs">
+                      <Icon name="XCircle" size={12} className="mr-1" />
                       Отказ
                     </Badge>
                   )}
@@ -158,18 +158,7 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <Card className="p-6 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 border-dashed">
-            <p className="text-sm text-muted-foreground mb-3">
-              Интегрируйте трансляцию на ваш сайт
-            </p>
-            <div className="bg-muted p-4 rounded-lg text-left overflow-x-auto">
-              <code className="text-xs text-foreground font-mono">
-                {`<iframe src="${window.location.href}" width="100%" height="600" frameborder="0"></iframe>`}
-              </code>
-            </div>
-          </Card>
-        </div>
+
       </div>
     </div>
   );
