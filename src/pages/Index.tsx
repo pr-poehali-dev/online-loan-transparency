@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 interface LoanApplication {
@@ -73,7 +74,16 @@ const Index = () => {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Займы Онлайн
           </h1>
-          <p className="text-muted-foreground text-sm md:text-lg">Прозрачная система выдачи займов в режиме реального времени</p>
+          <p className="text-muted-foreground text-sm md:text-lg mb-4">Прозрачная система выдачи займов в режиме реального времени</p>
+          <Button
+            onClick={() => window.location.href = '/embed'}
+            variant="outline"
+            size="sm"
+            className="gap-2"
+          >
+            <Icon name="Code2" size={16} />
+            Получить код для сайта
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-10">
