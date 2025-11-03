@@ -115,14 +115,6 @@ const Index = () => {
           </Card>
         </div>
 
-        <div className="mb-4 md:mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-primary rounded-full animate-pulse-glow"></div>
-            <h2 className="text-xl md:text-2xl font-bold">Трансляция заявок</h2>
-          </div>
-          <Badge variant="outline" className="text-xs">Обновляется каждые 5 сек</Badge>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {applications.map((app, index) => (
             <Card
