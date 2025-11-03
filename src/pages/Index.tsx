@@ -40,7 +40,7 @@ const Index = () => {
       };
     };
 
-    const initialApps = Array.from({ length: 6 }, generateRandomApplication);
+    const initialApps = Array.from({ length: 3 }, generateRandomApplication);
     setApplications(initialApps);
 
     const approved = initialApps.filter(app => app.status === 'approved');
@@ -52,7 +52,7 @@ const Index = () => {
 
     const interval = setInterval(() => {
       const newApp = generateRandomApplication();
-      setApplications(prev => [newApp, ...prev.slice(0, 8)]);
+      setApplications(prev => [newApp, ...prev.slice(0, 2)]);
       
       if (newApp.status === 'approved') {
         setStats(prev => ({
