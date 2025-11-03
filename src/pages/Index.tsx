@@ -67,16 +67,16 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
-      <div className="container mx-auto px-3 md:px-4 py-4 md:py-8 max-w-7xl">
-        <div className="mb-6 md:mb-8 text-center">
+    <div className="min-h-screen bg-gradient-to-br from-background to-primary/5 flex items-center">
+      <div className="container mx-auto px-3 md:px-4 py-6 md:py-8 max-w-7xl">
+        <div className="mb-4 md:mb-6 text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Займы Онлайн
           </h1>
           <p className="text-muted-foreground text-sm md:text-lg">Прозрачная система выдачи займов в режиме реального времени</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-6 md:mb-10 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-6 max-w-2xl mx-auto">
           <Card className="p-4 md:p-6 bg-gradient-to-br from-primary/20 to-white border-primary/30 animate-fade-in hover:shadow-lg transition-all">
             <div className="flex items-center justify-between mb-2">
               <Icon name="CheckCircle2" size={28} className="text-primary" />
